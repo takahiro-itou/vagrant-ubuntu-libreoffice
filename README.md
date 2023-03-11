@@ -1,12 +1,12 @@
-# Vagrantfile for Ubuntu 18.04 (bionic64)
+# Vagrantfile for Ubuntu 20.04 (focal64)
 
 ## 使い方
 
 ###  ダウンロード
 
 ```
-git  clone git@gitlab.com:takahiro-itou/vagrant-ubuntu-develop.git
-cd   vagrant-ubuntu-develop
+git  clone git@gitlab.com:takahiro-itou/vagrant-ubuntu-libreoffice.git
+cd   vagrant-ubuntu-libreoffice
 ```
 
 ###  準備
