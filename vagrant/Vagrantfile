@@ -8,6 +8,13 @@ Vagrant.configure("2") do |config|
     v.name   = "vagrant-ubuntu-libreoffice"
     v.memory = "8192"
     v.cpus   = 4
+
+    v.customize [
+      "modifyvm",               :id,
+      "--mouse",                "usbtablet",
+      "--graphicscontroller",   "vmsvga",
+    ]
+
     v.gui    = false
   end
 
