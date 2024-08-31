@@ -6,20 +6,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.name   = "vagrant-ubuntu-libreoffice"
-    v.cpus   = 4
     v.memory = "8192"
+    v.cpus   = 4
     v.gui    = false
   end
 
   config.vm.network(:forwarded_port, guest: 22, host: 11322, id: "ssh")
   config.vm.network("private_network", ip: "192.168.33.13")
-
-  config.vm.provision("user", type: "shell",
-                      path: "provision.user.sh",
-                      privileged: false)
-  config.vm.provision("hguser", type: "shell",
-                      path: "provision.hguser.sh",
-                      privileged: false)
   config.vm.synced_folder(".", "/vagrant", disabled: true)
 end
 
@@ -32,3 +25,4 @@ load  File.expand_path('common/AttachSCSIHdd.rb')
 load  File.expand_path('common/UploadFiles.rb')
 load  File.expand_path('common/SetupUbuntu.rb')
 load  File.expand_path('common/RamDisk.rb')
+load  File.expand_path('common/SetupUsers.rb')
